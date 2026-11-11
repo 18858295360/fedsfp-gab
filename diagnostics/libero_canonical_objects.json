@@ -1,0 +1,62 @@
+{
+ "0": {
+  "canonical_object": "moka_pot_1",
+  "demos_in_file": 50,
+  "demos_used": 50,
+  "scene": "KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it"
+ },
+ "1": {
+  "canonical_object": "akita_black_bowl_1",
+  "demos_in_file": 50,
+  "demos_used": 50,
+  "scene": "KITCHEN_SCENE4_put_the_black_bowl_in_the_bottom_drawer_of_the_cabinet_and_close_it"
+ },
+ "2": {
+  "canonical_object": "white_yellow_mug_1",
+  "demos_in_file": 50,
+  "demos_used": 50,
+  "scene": "KITCHEN_SCENE6_put_the_yellow_and_white_mug_in_the_microwave_and_close_it"
+ },
+ "3": {
+  "canonical_object": "moka_pot_2",
+  "demos_in_file": 50,
+  "demos_used": 50,
+  "scene": "KITCHEN_SCENE8_put_both_moka_pots_on_the_stove"
+ },
+ "4": {
+  "canonical_object": "alphabet_soup_1",
+  "demos_in_file": 50,
+  "demos_used": 50,
+  "scene": "LIVING_ROOM_SCENE1_put_both_the_alphabet_soup_and_the_cream_cheese_box_in_the_basket"
+ },
+ "5": {
+  "canonical_object": "alphabet_soup_1",
+  "demos_in_file": 50,
+  "demos_used": 50,
+  "scene": "LIVING_ROOM_SCENE2_put_both_the_alphabet_soup_and_the_tomato_sauce_in_the_basket"
+ },
+ "6": {
+  "canonical_object": "cream_cheese_1",
+  "demos_in_file": 50,
+  "demos_used": 50,
+  "scene": "LIVING_ROOM_SCENE2_put_both_the_cream_cheese_box_and_the_butter_in_the_basket"
+ },
+ "7": {
+  "canonical_object": "porcelain_mug_1",
+  "demos_in_file": 50,
+  "demos_used": 50,
+  "scene": "LIVING_ROOM_SCENE5_put_the_white_mug_on_the_left_plate_and_put_the_yellow_and_white_mug_on_the_right_plate"
+ },
+ "8": {
+  "canonical_object": "porcelain_mug_1",
+  "demos_in_file": 50,
+  "demos_used": 50,
+  "scene": "LIVING_ROOM_SCENE6_put_the_white_mug_on_the_plate_and_put_the_chocolate_pudding_to_the_right_of_the_plate"
+ },
+ "9": {
+  "canonical_object": "black_book_1",
+  "demos_in_file": 50,
+  "demos_used": 50,
+  "scene": "STUDY_SCENE1_pick_up_the_book_and_place_it_in_the_back_compartment_of_the_caddy"
+ }
+}

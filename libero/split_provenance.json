@@ -1,0 +1,177 @@
+{
+  "libero10_sev0p00_PLD_K2.json": {
+    "sha256_original": "1950bea372aac271dbd0169b1915a18ef254c36062cb91663de60bf935493b0c",
+    "sha256_sanitized": "5f691213238243bfa5c2ceebdae21b7d13ed533ee24cb813a17a14c68e6ca60b",
+    "demonstrations_by_client": [
+      281,
+      219
+    ]
+  },
+  "libero10_sev0p25_PLD_K2.json": {
+    "sha256_original": "5ce9a36179016b53036996c78685b51a02816d49705d103ea9d08565ff73dcd2",
+    "sha256_sanitized": "ee4db62d97c17d84d3d93e24ab40448f91c9dfd727df60a4d487dd17f0e63c5a",
+    "demonstrations_by_client": [
+      281,
+      219
+    ]
+  },
+  "libero10_sev0p50_PLD_K2.json": {
+    "sha256_original": "ca6d1c7b78042e02cc422279b38678e2c20180bc254946e50f55e62ded26d993",
+    "sha256_sanitized": "a1c495564f43497502c1a3db83d4bb81304bc48b3d8be4861008aa61e8c115a2",
+    "demonstrations_by_client": [
+      281,
+      219
+    ]
+  },
+  "libero10_sev0p75_PLD_K2.json": {
+    "sha256_original": "35739977b7ccbfd4bdfc92947a748d44696f9cabf0186e7c638abfab217ce343",
+    "sha256_sanitized": "03308b397554c8d5a9fe94d138fbebf09976e5dc0c082b7af57e0a349e6da625",
+    "demonstrations_by_client": [
+      281,
+      219
+    ]
+  },
+  "libero10_sev1p00_PLD_K2.json": {
+    "sha256_original": "3693b53ae8c119b11b4552da01b1da439c08c0a483e52d1bc22db940eda968b2",
+    "sha256_sanitized": "20a876d3aba2de1de78713cc76654e273e642159a3927dcfd72bd9dd5885e481",
+    "demonstrations_by_client": [
+      281,
+      219
+    ]
+  },
+  "libero10_pathPLD_K4_s000.json": {
+    "sha256_original": "6cf3291f4f904c3d0875c0d4a6ececb1f131311ff39fa8cca5430b6456082c54",
+    "sha256_sanitized": "45950ae0776a1838268fa3c3301911313fe8cadeb587bff0b3f09598acaf6c40",
+    "demonstrations_by_client": [
+      138,
+      143,
+      107,
+      112
+    ]
+  },
+  "libero10_pathPLD_K4_s025.json": {
+    "sha256_original": "9e04ebe5fa051ed35c17a6fa1f85df5debf597ca89b502cd5ca7f5c99d729c5c",
+    "sha256_sanitized": "1b63a26471907aecc6ec9e29092ca63f8034dff3f6bbbff62916a7c8356525b6",
+    "demonstrations_by_client": [
+      138,
+      143,
+      107,
+      112
+    ]
+  },
+  "libero10_pathPLD_K4_s050.json": {
+    "sha256_original": "ab1557a7d0e24ee73d709923b33e7ebf1aad81d9e6bdbda7f56acbc04081b1f1",
+    "sha256_sanitized": "73175837a66b3e0cb376ca638a3d0a34aaa3252af065ef481127a9535ba884e3",
+    "demonstrations_by_client": [
+      138,
+      143,
+      107,
+      112
+    ]
+  },
+  "libero10_pathPLD_K4_s075.json": {
+    "sha256_original": "bfe504f86669f43497a8b4b8a4b4920711389b8a711fcf87f1f39b91c96bc21f",
+    "sha256_sanitized": "ab9c3828505880b09ae3b1ce0ce98f3b0d99f140195fc7ee82273462c0f163b4",
+    "demonstrations_by_client": [
+      138,
+      143,
+      107,
+      112
+    ]
+  },
+  "libero10_pathPLD_K8_s000.json": {
+    "sha256_original": "f13087e959518d2a6509c8acfb0e6582fadb02faa13a6f46e2472c06eb84ae7b",
+    "sha256_sanitized": "6551c263983a8c48be54b3056d7f2edd3b0b8cff772deb8160ecc77a56a1796b",
+    "demonstrations_by_client": [
+      67,
+      71,
+      70,
+      73,
+      51,
+      56,
+      53,
+      59
+    ]
+  },
+  "libero10_pathPLD_K8_s025.json": {
+    "sha256_original": "d2d51d5b2d19e55d10fb9dd2dfcd42e816287383cd41f80e036acea9733ad37d",
+    "sha256_sanitized": "b779bbbc851bcec56f6cb38cac09151ff1e2cd113de3c619b328633fb6d44488",
+    "demonstrations_by_client": [
+      67,
+      71,
+      70,
+      73,
+      51,
+      56,
+      53,
+      59
+    ]
+  },
+  "libero10_pathPLD_K8_s050.json": {
+    "sha256_original": "44185a8991299bafa68a75a2455935f9423d05a5d477cdcd16337beeac6a3760",
+    "sha256_sanitized": "ef2b6076b6e95e93cce14a309a27540fa205555a5d233ada657aa11ea1ccbae8",
+    "demonstrations_by_client": [
+      67,
+      71,
+      70,
+      73,
+      51,
+      56,
+      53,
+      59
+    ]
+  },
+  "libero10_pathPLD_K8_s075.json": {
+    "sha256_original": "3cef85f46a219b6b6a13035948671d9949f5ffa8866098ea88d75b9b786fab97",
+    "sha256_sanitized": "f074fe6866edc573f84099a252d6a5e2aa8d74eb21927ea839165efac6234475",
+    "demonstrations_by_client": [
+      67,
+      71,
+      70,
+      73,
+      51,
+      56,
+      53,
+      59
+    ]
+  },
+  "libero10_closelift_S_K2.json": {
+    "sha256_original": "d3376420a9f6b680db1005583850c6f37f7bb6051078726fa4443bdbb8f3cd87",
+    "sha256_sanitized": "20a876d3aba2de1de78713cc76654e273e642159a3927dcfd72bd9dd5885e481",
+    "demonstrations_by_client": [
+      281,
+      219
+    ]
+  },
+  "libero10_closelift_S_K4.json": {
+    "sha256_original": "b56ad6305a0a9a48f01a2cacbc5ddf7ed01ac6cc046e7dfe6cb17c1e34483c57",
+    "sha256_sanitized": "c47d90d475e5e1df8e0198cb7fb76bb309f03a9df8baf2a43c6d4824effebf7e",
+    "demonstrations_by_client": [
+      138,
+      143,
+      107,
+      112
+    ]
+  },
+  "libero10_closelift_S_K8.json": {
+    "sha256_original": "55ef7059554c339cbe5ff90f7a7b0e6203f0163145c71c7045e01097fffd11aa",
+    "sha256_sanitized": "e03def7a62d7c9faa0b6aee9d5a632af3d2eb7fe4d4156812a4167ae30b28f87",
+    "demonstrations_by_client": [
+      67,
+      71,
+      70,
+      73,
+      51,
+      56,
+      53,
+      59
+    ]
+  },
+  "libero10_closelift_S_K1.json": {
+    "sha256_original": "2bfc861b5f2a06c0c88603a3ac7b09320106c521d1c83c774ebbbc11f346f3ee",
+    "sha256_sanitized": "f9dda3506d3ac24aa49d3cf7ff124e3d005a5489381fb50009ff8af81f5f58ec",
+    "demonstrations_by_client": [
+      500
+    ]
+  }
+}

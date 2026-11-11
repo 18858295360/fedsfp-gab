@@ -1,0 +1,17 @@
+# Compatible API ranges, not a lockfile for the historical experiments.
+# Select the matching PyTorch and torchvision build for your CUDA installation.
+torch>=2.1,<2.6
+torchvision>=0.16,<0.21
+numpy>=1.24,<2
+diffusers==0.11.1
+huggingface-hub<0.26
+torchdyn>=1.0,<2
+tqdm
+zarr>=2.16,<3
+numcodecs<0.16
+opencv-python-headless<4.12
+gym==0.26.2
+pygame>=2,<3
+pymunk>=6,<7
+shapely
+scikit-image

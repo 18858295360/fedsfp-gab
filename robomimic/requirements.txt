@@ -1,0 +1,8 @@
+numpy==2.0.2
+scipy==1.13.1
+h5py==3.14.0
+diffusers==0.11.1
+huggingface-hub==0.23.4
+robomimic @ git+https://github.com/ARISE-Initiative/robomimic.git@ae5799f0fae05c4559ee1f9645b0f77eb5251929
+robosuite==1.5.1
+mujoco==3.8.1
