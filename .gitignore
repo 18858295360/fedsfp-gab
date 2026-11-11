@@ -15,6 +15,7 @@ __pycache__/
 *.hdf5
 *.npy
 *.npz
+!/libero/assets/libero_10_lang.npz
 *.pkl
 *.zarr/
 *.zip

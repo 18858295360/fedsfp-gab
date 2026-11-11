@@ -15,16 +15,6 @@
   },
   "fixed_dataset_sha256": "5e937e2924da6b6c024a833c1d457a843e7fe5d331a13c4282f89babe980f0bf",
   "schema_version": 1,
-  "upstream_reference": {
-    "repository": "https://github.com/siddancha/streaming-flow-policy",
-    "commit": "ea08aa9bf24fe9960abc85d5ed69023ce7a91cc8",
-    "byte_identical_runtime_modules": [
-      "streaming_flow_policy/pusht/dp_state_notebook/all.py",
-      "streaming_flow_policy/pusht/dp_state_notebook/base_policy.py",
-      "streaming_flow_policy/pusht/dp_state_notebook/diffusion_policy.py",
-      "streaming_flow_policy/pusht/dp_state_notebook/env.py"
-    ]
-  },
   "study_sources": {
     "scripts/pusht_sfp/moment_persistence.py": "3b7ac2859b107663875c823975537a2c4f9361a83c757eb3fdbb43af27b43647",
     "scripts/pusht_sfp/p39_noniid_severity_gate.py": "4e731f65cc18b75db6f79124cf66581635db8e0c8b006ff0bfb7d3bb75018175",
@@ -32,5 +22,40 @@
     "scripts/pusht_sfp/phase1_fedavg_state_ablation.py": "61e0ed023643be8ba65119440c4f2a64417dc50aaac0bd4b6407bab55e782d51",
     "scripts/pusht_sfp/phase1_iid_action_fedavg.py": "06bbaabdf035f07a72a11456b171a563ce7395d29ff9ade7b018170016966157",
     "scripts/pusht_sfp/train_sfp.py": "29875498b4ca119782e6d0e3f1373e03aad3d70a9cff7600da2c5cfba030aeba"
+  },
+  "upstream_reference": {
+    "byte_identical_runtime_modules": [
+      "streaming_flow_policy/pusht/dp_state_notebook/all.py",
+      "streaming_flow_policy/pusht/dp_state_notebook/base_policy.py",
+      "streaming_flow_policy/pusht/dp_state_notebook/diffusion_policy.py",
+      "streaming_flow_policy/pusht/dp_state_notebook/env.py"
+    ],
+    "commit": "ea08aa9bf24fe9960abc85d5ed69023ce7a91cc8",
+    "edit_recipes": {
+      "streaming_flow_policy/pusht/dataset.py": "runtime_overlay/streaming_flow_policy/pusht/dataset.json",
+      "streaming_flow_policy/pusht/dp_state_notebook/dataset.py": "runtime_overlay/streaming_flow_policy/pusht/dp_state_notebook/dataset.json",
+      "streaming_flow_policy/pusht/dp_state_notebook/network.py": "runtime_overlay/streaming_flow_policy/pusht/dp_state_notebook/network.json",
+      "streaming_flow_policy/pusht/dp_state_notebook/rollout.py": "runtime_overlay/streaming_flow_policy/pusht/dp_state_notebook/rollout.json",
+      "streaming_flow_policy/pusht/evaluate.py": "runtime_overlay/streaming_flow_policy/pusht/evaluate.json",
+      "streaming_flow_policy/pusht/sfpd.py": "runtime_overlay/streaming_flow_policy/pusht/sfpd.json",
+      "streaming_flow_policy/pusht/sfps.py": "runtime_overlay/streaming_flow_policy/pusht/sfps.json"
+    },
+    "repository": "https://github.com/siddancha/streaming-flow-policy",
+    "source_sha256": {
+      "streaming_flow_policy/pusht/dataset.py": "644f3a199e3cbd774d1e08690cbe354d9438ae60629d1f799c2923f7059bdd39",
+      "streaming_flow_policy/pusht/dp_state_notebook/all.py": "7e5ea1e8cd6bb4657858049faa9a79d536df3d8d85d131a19cbdd8be2f2804cc",
+      "streaming_flow_policy/pusht/dp_state_notebook/base_policy.py": "fd55820b66c1af3df2b897bec1d974752f5111af18f2dc3b853d9055a6b19705",
+      "streaming_flow_policy/pusht/dp_state_notebook/dataset.py": "a759bbc36f4a759f9497e4260614fb7f0defe45144331f7b31025e7c382886e3",
+      "streaming_flow_policy/pusht/dp_state_notebook/diffusion_policy.py": "08da2f2550fd1113bbbe843f99b5c1e5b28c616e7a6dca8f93b01a6441bc5624",
+      "streaming_flow_policy/pusht/dp_state_notebook/env.py": "deb48d8118d865e615c6ac042b6b27efe7a6a4a7ee69b1a180323fa718c54725",
+      "streaming_flow_policy/pusht/dp_state_notebook/network.py": "ffe9227db51d596e356541a10e619978ed09062e7afad581b4e426bafe2a4664",
+      "streaming_flow_policy/pusht/dp_state_notebook/rollout.py": "ec74500d3b13e0bbf40d51478ec5fb80f387e9da60c6cb1c36ab63cc7357cbab",
+      "streaming_flow_policy/pusht/evaluate.py": "e3b21fe5d1f612ad897ffa6d2a941147668ef5cc7699e8d665a963f5aa241a84",
+      "streaming_flow_policy/pusht/sfpd.py": "7846b75d5f613c3083d47c4e88163225b81bc3be6c6e65233eb8ae7749393897",
+      "streaming_flow_policy/pusht/sfps.py": "6a1dcc5845a5737e793d5089357d07ee91ad263003813840133d78b7baacbd70"
+    },
+    "standalone_additions": {
+      "streaming_flow_policy/pusht/trajectory.py": "runtime_overlay/streaming_flow_policy/pusht/trajectory.py"
+    }
   }
 }

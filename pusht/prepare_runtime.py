@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Assemble an external Push-T runtime from a separately supplied source tree."""
+"""Assemble a verified Push-T runtime from upstream or an audited local source tree."""
 
 import argparse
 import hashlib
@@ -33,11 +33,66 @@ def fix_state_window_indices(content):
 
 def load_sources(source_root, manifest):
     sources = {}
-    for relative, expected in manifest["external_runtime_sources"].items():
+    for relative in manifest["external_runtime_sources"]:
         path = source_root / relative
         if not path.is_file():
             raise ValueError(f"Missing compatible runtime module: {relative}")
+        sources[relative] = path.read_bytes()
+    return verify_sources(sources, manifest)
+
+
+def render_recipe(upstream_lines, recipe):
+    chunks = []
+    for operation, *args in recipe:
+        if operation == "copy":
+            source, first, stop = args
+            chunks.extend(upstream_lines[source][first:stop])
+        elif operation == "indent":
+            source, index, indentation = args
+            chunks.append(indentation + upstream_lines[source][index].lstrip(" \t"))
+        elif operation == "edit":
+            source, index, edits = args
+            line = upstream_lines[source][index]
+            cursor = 0
+            for first, stop, replacement in edits:
+                chunks.extend((line[cursor:first], replacement))
+                cursor = stop
+            chunks.append(line[cursor:])
+        elif operation == "add":
+            chunks.append(args[0])
+        else:
+            raise ValueError(f"Unknown overlay operation: {operation}")
+    return "".join(chunks).encode("utf-8")
+
+
+def load_upstream_sources(upstream_root, manifest):
+    reference = manifest["upstream_reference"]
+    sources = {}
+    for relative, expected in reference["source_sha256"].items():
+        path = upstream_root / relative
+        if not path.is_file():
+            raise ValueError(f"Missing pinned upstream module: {relative}")
         content = path.read_bytes()
+        actual = digest(content)
+        if actual != expected:
+            raise ValueError(f"Upstream source hash mismatch for {relative}: {actual}")
+        sources[relative] = content
+
+    upstream_lines = {
+        relative: content.decode("utf-8").splitlines(keepends=True)
+        for relative, content in sources.items()
+    }
+    for relative, recipe_path in reference["edit_recipes"].items():
+        recipe = json.loads((RELEASE / recipe_path).read_text(encoding="utf-8"))
+        sources[relative] = render_recipe(upstream_lines, recipe)
+    for relative, addition_path in reference["standalone_additions"].items():
+        sources[relative] = (RELEASE / addition_path).read_bytes()
+    return verify_sources(sources, manifest)
+
+
+def verify_sources(sources, manifest):
+    for relative, expected in manifest["external_runtime_sources"].items():
+        content = sources[relative]
         actual = digest(content)
         if relative == DATASET and actual == expected:
             content = fix_state_window_indices(content)
@@ -59,7 +114,9 @@ def load_sources(source_root, manifest):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--source-root", required=True, type=Path)
+    origin = parser.add_mutually_exclusive_group(required=True)
+    origin.add_argument("--upstream-root", type=Path, help="Checkout of the pinned upstream revision.")
+    origin.add_argument("--source-root", type=Path, help="Existing audited runtime source tree.")
     action = parser.add_mutually_exclusive_group(required=True)
     action.add_argument("--work-dir", type=Path, help="New directory outside the release tree.")
     action.add_argument("--verify-only", action="store_true")
@@ -67,7 +124,10 @@ def main():
 
     manifest = json.loads((RELEASE / "source_requirements.json").read_text(encoding="utf-8"))
     try:
-        sources = load_sources(args.source_root, manifest)
+        if args.upstream_root is not None:
+            sources = load_upstream_sources(args.upstream_root, manifest)
+        else:
+            sources = load_sources(args.source_root, manifest)
     except (OSError, ValueError, SyntaxError) as error:
         parser.error(str(error))
     print(f"Verified and syntax-checked {len(sources)} runtime modules.")
@@ -89,8 +149,9 @@ def main():
     for directory in ("scripts", "scripts/pusht_sfp", "streaming_flow_policy",
                       "streaming_flow_policy/pusht", "streaming_flow_policy/pusht/dp_state_notebook"):
         (work_dir / directory / "__init__.py").write_bytes(b"")
+    notice_root = args.upstream_root or args.source_root
     for name in ("LICENSE", "LICENSE.txt", "COPYING", "NOTICE", "NOTICE.txt"):
-        notice = args.source_root / name
+        notice = notice_root / name
         if notice.is_file():
             (work_dir / name).write_bytes(notice.read_bytes())
     (work_dir / "verified_sources.json").write_text(

@@ -15,6 +15,6 @@ The Push-T trainer includes a fix for handing refreshed anchor caches to data-lo
 
 This release covers the simulation components described above. The fixed-checkpoint mechanism probes, complete figure-generation pipeline, and physical robot protocol are outside its scope. Refer to each benchmark's README for its dependency and verification limits.
 
-The Push-T train-and-rollout workflow requires the separately supplied compatible SFP runtime described in its README. Its archived Table 2 readout can be run directly. Reproducing the original LIBERO conditioning requires the original task-language embedding file, which is a separate input.
+The Push-T setup assembles the verified runtime from a pinned public Streaming Flow Policy checkout and the study changes in this repository. Its archived Table 2 readout can be run directly. The LIBERO-10 setup uses the bundled original task-language embedding file.
 
 The [original Streaming Flow Policy project](https://github.com/siddancha/streaming-flow-policy), [RoboMimic](https://github.com/ARISE-Initiative/robomimic), and [LIBERO](https://github.com/Lifelong-Robot-Learning/LIBERO) are external dependencies where specified. Their source, assets, and terms come from their respective upstream projects. Any redistributed third-party code retains its applicable notices alongside the corresponding benchmark. No new repository-wide license is declared here.

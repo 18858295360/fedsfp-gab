@@ -28,13 +28,13 @@ Rollout additionally requires a working [LIBERO simulator installation](https://
 
 Get the original LIBERO-10 HDF5 demonstrations from the [LIBERO dataset release](https://github.com/Lifelong-Robot-Learning/LIBERO#datasets). Point `DATA` at the directory with the ten `*_demo.hdf5` files and no other HDF5 files. File index is the sorted basename order in [`libero10_task_order.json`](libero10_task_order.json). Each file contains `data/demo_0` through `data/demo_49`, 7D `actions`, and `obs/agentview_rgb`, `obs/eye_in_hand_rgb`, `obs/ee_states`, `obs/gripper_states` and `obs/joint_states`. Both RGB cameras have dimensions 128 × 128 × 3. The three proprioception arrays contain 6, 2, and 7 components.
 
-Supply the original task-language NPZ as `LANG_NPZ`. Its `tasks` entries match the HDF5 basenames with `_demo.hdf5` removed, and `emb` contains one float32 vector of width 384 per task. The archived NPZ has SHA-256 `c392dc42debb7ca1eb5fbf1d87870386d45f0e5f191fa162dce72e7f19c3e56f`. The original language encoder and its generation settings were not established in the audit. An independently generated NPZ with the same shape can exercise the pipeline but changes the training/evaluation input. The demonstrations and NPZ are external inputs to this release.
+Use the bundled original [LIBERO-10 task embeddings](assets/libero_10_lang.npz) for input validation, training and evaluation. The archive contains the ten task keys and their 384-dimensional float32 vectors. Its bytes match the archived training input. The original encoder and generation settings remain unverified. See the [asset provenance and attribution](assets/README.md).
 
 The JSON files in [`splits`](splits) preserve the archived membership order and `file_index|demo_key` values. [`split_provenance.json`](split_provenance.json) gives the hashes before and after removal of unrelated metadata. The `closelift_S` files are the structured endpoint and centralized control. The five `sev*_PLD_K2` files and the four `pathPLD_K*_s*` files at each of K=4 and K=8, together with their `closelift_S` endpoints, supply the diagnostic paths. All splits cover each of the 500 demonstrations once. The K=4 and K=8 structured assignments preserve the previous level's parent memberships.
 
 ```bash
 export DATA=/absolute/path/to/libero_10
-export LANG_NPZ=/absolute/path/to/libero_10_lang.npz
+export LANG_NPZ="$PWD/assets/libero_10_lang.npz"
 K=2
 SPLIT="$PWD/splits/libero10_closelift_S_K${K}.json"
 python validate_inputs.py --libero-root "$DATA" --lang-npz "$LANG_NPZ" --split "$SPLIT"
